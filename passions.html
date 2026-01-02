@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passions — Arian</title>
+  <link rel="stylesheet" href="/style/passions.css">
+</head>
+
+<body>
+
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About me</a>
+  <a href="passions.html">Passions</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+</nav>
+
+
+<!-- 🎥 Elegant Video Intro -->
+<section class="video-hero">
+  <video id="passionVideo" src="/videos/v5.mov" playsinline></video>
+
+  <div class="overlay">
+    <h1>My Passions</h1>
+    <p>Everything that shapes my mind, my work, and my spirit.</p>
+  </div>
+
+  <button id="videoToggle" class="video-btn">Play with sound</button>
+</section>
+
+
+<!-- ⭐ PRIORITY PASSIONS -->
+<section class="grid">
+
+  <div class="passion highlight">
+    <img src="/public/programation.jpg" alt="Programming">
+    <h2>Programming</h2>
+    <p>
+      Technology is my creative language — I build ideas through code and logic,
+      transforming concepts into reality.
+    </p>
+  </div>
+
+  <div class="passion highlight">
+    <img src="/public/writer.jpg" alt="Writing">
+    <h2>Writing</h2>
+    <p>
+      Writing allows me to think, reflect, and connect philosophy and
+      storytelling with my inner world.
+    </p>
+  </div>
+
+  <div class="passion highlight">
+    <img src="/public/idioms.jpg" alt="Languages">
+    <h2>Idioms & Languages</h2>
+    <p>
+      Learning languages opens doors to culture, empathy, and new ways of
+      understanding people and ideas.
+    </p>
+  </div>
+</section>
+
+
+<!-- 🔹 SECONDARY PASSIONS -->
+<section class="grid">
+
+  <div class="passion">
+    <img src="/public/teacher.jpg" alt="Teaching">
+    <h2>Teaching</h2>
+    <p>
+      Teaching is sharing growth — guiding others while learning from them.
+      Education is a bridge between minds.
+    </p>
+  </div>
+
+  <div class="passion">
+    <img src="/public/business.jpg" alt="Business">
+    <h2>Business</h2>
+    <p>
+      I am passionate about entrepreneurship, creative strategy,
+      and building meaningful projects with purpose.
+    </p>
+  </div>
+
+  <div class="passion">
+    <img src="/public/camus.jpg" alt="Philosophy">
+    <h2>Philosophy</h2>
+    <p>
+      Philosophy helps me question reality, human nature,
+      and the meaning behind existence and thought.
+    </p>
+  </div>
+
+  <div class="passion">
+    <img src="/public/sport.jpg" alt="Sports">
+    <h2>Sports</h2>
+    <p>
+      Sports keep me disciplined, focused, and grounded —
+      a healthy mind thrives in a healthy body.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- 🎬 Video Logic -->
+<script>
+  const video = document.getElementById("passionVideo");
+  const btn = document.getElementById("videoToggle");
+
+  video.muted = true;
+
+  btn.addEventListener("click", async () => {
+    if (video.paused) {
+      video.muted = false;
+      await video.play();
+      btn.textContent = "Pause video";
+    } else {
+      video.pause();
+      btn.textContent = "Play with sound";
+    }
+  });
+</script>
+
+</body>
+</html>

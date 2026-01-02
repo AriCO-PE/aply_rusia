@@ -1,0 +1,212 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui, sans-serif}
+
+body{
+  background:#0f0f0f;
+  color:#fff;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.2rem 2rem;
+}
+
+.nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: .5px;
+}
+
+.nav a.active,
+.nav a:hover {
+  color: #fff;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero video{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  min-width:100%;
+  min-height:100%;
+  object-fit:cover;
+}
+
+.hero .overlay{
+  position:relative;
+  height:100%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.8));
+  text-align:center;
+  padding:0 24px;
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,5rem);
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+#play-btn{
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.6);
+  background:rgba(0,0,0,.4);
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(6px);
+}
+
+#play-btn:hover{
+  background:rgba(255,255,255,.1);
+}
+
+
+/* SECTION */
+.section{
+  min-height:100vh;
+  padding:96px 40px;
+  background:#111;
+  line-height:1.6;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.6s ease;
+}
+
+/* cuando la sección se vuelve visible */
+.section.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* CARTAS dentro de la sección */
+.section .card{
+  min-height:320px; /* ajusta la altura mínima */
+  background:rgba(255,255,255,.05);
+  border-radius:16px;
+  padding:20px;
+  backdrop-filter:blur(8px);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.section .card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 24px rgba(0,0,0,.3);
+}
+
+
+
+/* 📱 Responsive */
+@media (max-width: 900px){
+
+  nav{
+    padding:12px 18px;
+  }
+
+  .hero h1{
+    font-size:clamp(1.8rem, 6vw, 3rem);
+  }
+
+  #play-btn{
+    padding:10px 18px;
+    font-size:.9rem;
+  }
+
+  .section{
+    padding:72px 20px;
+  }
+}
+
+@media (max-width: 600px){
+
+  nav{
+    justify-content:center;
+    gap:12px;
+  }
+
+  .logo{
+    font-size:1rem;
+  }
+
+  nav a{
+    font-size:.9rem;
+  }
+
+  .hero{
+    height:90vh;
+  }
+
+  .hero .overlay{
+    padding:0 16px;
+  }
+
+  .section{
+    padding:64px 18px;
+    line-height:1.5;
+  }
+}
+
+
+/* 📱 Video responsive */
+@media (max-width: 900px){
+  .hero video{
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:cover;
+  }
+}
+
+@media (max-width: 600px){
+  .hero{
+    height:85vh;
+  }
+
+  .hero video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:translate(-50%,-50%) scale(1.1); /* evita bordes en pantallas altas */
+  }
+}
+
+/* IMÁGENES dentro de las cartas */
+.section .card img {
+  width: 100%;
+  height: 220px;          /* altura uniforme */
+  object-fit: cover;      /* mantiene proporción y recorta si hace falta */
+  border-radius: 16px;    /* bordes redondeados */
+  margin-bottom:16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra sutil */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* efecto hover sobre la imagen */
+.section .card:hover img {
+  transform: scale(1.05); /* pequeño zoom al pasar el mouse */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* responsive para móviles */
+@media(max-width:900px){
+  .section .card img{
+    height:180px;
+  }
+}
+
+@media(max-width:600px){
+  .section .card img{
+    height:150px;
+  }
+}
+
