@@ -6,7 +6,8 @@ const playBtn = document.getElementById("play-btn");
 // ▶ Reproducir con sonido
 playBtn.addEventListener("click", async () => {
   try {
-    await video.play();
+    video.muted = false; // 🔑 quitar mute
+    await video.play();   // reproducir con sonido
     playBtn.style.display = "none";
   } catch (e) {
     console.log("El navegador bloqueó la reproducción:", e);

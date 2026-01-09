@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minimal Video Landing</title>
-
   <link rel="stylesheet" href="/style/index.css">
 </head>
 
@@ -19,15 +18,19 @@
 </nav>
 
 <section class="hero">
-    <video id="video-bg" src="/videos/v1.mov" playsinline></video>
+
+  <video id="video-bg" autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dbgr50om2/video/upload/v1767407628/v1_cmc2yr.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
 
   <div class="overlay">
     <h1>Hello Russia! <br> I am Arian</h1>
-
     <button id="play-btn">Play with sound</button>
   </div>
+  
 </section>
+
 <script src="/js/index.js"></script>
 </body>
 </html>
-
